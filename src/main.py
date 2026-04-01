@@ -1,8 +1,8 @@
 from pathlib import Path
 
-def solve_max_subsequence(a: list, b: list, values: dict) -> tuple[int, str]:
-    m = len(a)
-    n = len(b)
+def solve_max_subsequence(a: str, b: str, values: dict) -> tuple[int, str]:
+    m = len(b)
+    n = len(a)
 
     dp = [[0] * (m + 1) for i in range(n + 1)]
 
@@ -19,8 +19,8 @@ def solve_max_subsequence(a: list, b: list, values: dict) -> tuple[int, str]:
     subsequence = []
     i, j = n, m
     while i > 0 and j > 0:
-        if a[i] == b[j]:
-            subsequence.append(a[i])
+        if a[i-1] == b[j-1]:
+            subsequence.append(a[i-1])
             i -= 1
             j -= 1
         elif dp[i-1][j] > dp[i][j-1]:
@@ -50,3 +50,7 @@ if __name__ == "__main__":
     data_dir = script_dir.parent / "data"
     filepath = data_dir / input("Enter filename: ")
     a, b, values = process_file(filepath)
+    (max_val, subsequence) = solve_max_subsequence(a, b, values)
+
+    print("Max value:", max_val)
+    print("Subsequence:", subsequence)
