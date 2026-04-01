@@ -1,3 +1,5 @@
+from pathlib import Path
+
 def solve_max_subsequence(a: list, b: list, values: dict) -> tuple[int, str]:
     m = len(a)
     n = len(b)
@@ -27,3 +29,17 @@ def solve_max_subsequence(a: list, b: list, values: dict) -> tuple[int, str]:
             j -= 1
 
     return max_val, "".join(reversed(subsequence))
+
+def process_file(filepath: Path) -> tuple[str, str, dict[str, int]]:
+    with open(filepath) as f:
+        values = dict()
+        alphabet_size = int(f.readline())
+        for i in range(0, alphabet_size):
+            letter = str(f.read())
+            value = int(f.read())
+            values[letter] = value
+
+        a = f.readline()
+        b = f.readline()
+
+        return a, b, values
