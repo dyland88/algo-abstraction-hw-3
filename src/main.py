@@ -32,17 +32,15 @@ def solve_max_subsequence(a: list, b: list, values: dict) -> tuple[int, str]:
 
 def process_file(filepath: Path) -> tuple[str, str, dict[str, int]]:
     with open(filepath) as f:
-        values = dict()
-        alphabet_size = int(f.readline())
+        values = {}
+        alphabet_size = int(f.readline().strip())
 
-        for i in range(0, alphabet_size):
+        for i in range(alphabet_size):
             letter, value = f.readline().split()
-            value = int(value)
+            values[letter] = int(value)
 
-            values[letter] = value
-
-        a = f.readline()
-        b = f.readline()
+        a = f.readline().strip()
+        b = f.readline().strip()
 
         return a, b, values
 
