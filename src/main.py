@@ -34,12 +34,21 @@ def process_file(filepath: Path) -> tuple[str, str, dict[str, int]]:
     with open(filepath) as f:
         values = dict()
         alphabet_size = int(f.readline())
+
         for i in range(0, alphabet_size):
-            letter = str(f.read())
-            value = int(f.read())
+            letter, value = f.readline().split()
+            value = int(value)
+
             values[letter] = value
 
         a = f.readline()
         b = f.readline()
 
         return a, b, values
+
+
+if __name__ == "__main__":
+    script_dir = Path(__file__).parent
+    data_dir = script_dir.parent / "data"
+    filepath = data_dir / input("Enter filename: ")
+    a, b, values = process_file(filepath)
