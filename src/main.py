@@ -46,11 +46,18 @@ def process_file(filepath: Path) -> tuple[str, str, dict[str, int]]:
 
 
 if __name__ == "__main__":
-    script_dir = Path(__file__).parent
-    data_dir = script_dir.parent / "data"
-    filepath = data_dir / input("Enter filename: ")
-    a, b, values = process_file(filepath)
-    (max_val, subsequence) = solve_max_subsequence(a, b, values)
+    # commented out code was used to create the output files programmatically
+    # for i in list(range(1, 11)) + ["example"]:
+        script_dir = Path(__file__).parent
+        data_dir = script_dir.parent / "data"
+        filepath = data_dir / input("Enter filename: ")
+        # filepath = data_dir / f"../data/{i}.in"
+        a, b, values = process_file(filepath)
+        (max_val, subsequence) = solve_max_subsequence(a, b, values)
+        output_path = data_dir / f"{i}.out"
 
-    print("Max value:", max_val)
-    print("Subsequence:", subsequence)
+        print(f"Max value: {max_val}\n")
+        print(f"Subsequence: {subsequence}\n")
+        # with open(output_path, "w", encoding="utf-8") as f:
+        #     f.write(f"Max value: {max_val}\n")
+        #     f.write(f"Subsequence: {subsequence}\n")
