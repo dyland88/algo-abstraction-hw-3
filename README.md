@@ -49,6 +49,6 @@ let n, m be the size of A and B strings respectively
 
 Runtime:
 
-- Time complexity: $O(nm)$ due to filling the $n \times m$ table.
+- Time complexity: $O(nm)$ due to filling the $n \times m$ table with an O(1) operation
 - Space complexity: $O(nm)$ for the DP table.
 
