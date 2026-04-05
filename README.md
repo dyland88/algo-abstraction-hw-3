@@ -24,3 +24,31 @@ Proof:
 
 - If they do not match, the optimal HVLCS must exclude one of them; the best value is the maximum of the two resulting subproblems.
 - The base cases are correct because an empty string has no common subsequence with positive value.
+
+# Q3 Big Oh
+
+Pseudocode:
+
+```text
+(A, B, v):
+	n = |A|
+	m = |B|
+	dp = 2D array (n+1) x (m+1) filled with zeros
+
+	for i <- 1 to n:
+		for j <- 1 to m:
+			if A[i-1] == B[j-1]:
+				dp[i][j] <- dp[i-1][j-1] + v(A[i-1])
+			else:
+				dp[i][j] <- max(dp[i-1][j], dp[i][j-1])
+
+	return dp[n][m]
+```
+
+let n, m be the size of A and B strings respectively
+
+Runtime:
+
+- Time complexity: $O(nm)$ due to filling the $n \times m$ table.
+- Space complexity: $O(nm)$ for the DP table.
+
