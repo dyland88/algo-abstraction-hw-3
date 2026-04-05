@@ -30,7 +30,7 @@ Proof:
 Pseudocode:
 
 ```text
-(A, B, v):
+HVLCS(A, B, v):
 	n = |A|
 	m = |B|
 	dp = 2D array (n+1) x (m+1) filled with zeros
