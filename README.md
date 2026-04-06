@@ -2,6 +2,26 @@ Dylan Coben - 64386159
 
 Rohit Dasgupta - 23459981
 
+# Running instructions
+
+Ensure python3 is installed.
+
+From CLI in the root directory, run:
+
+```bash
+python3 src/main.py
+```
+
+Files to run should be in 'data/'. To run 1.in for example, simply type '1.in', NOT data/1.in
+
+```bash
+python3 src/main.py
+Enter filename: 1.in
+Max Value 180
+
+Subsequence: RZPRZPRZPRZPR
+```
+
 # Q1 Table
 
 ![Image](image.png)

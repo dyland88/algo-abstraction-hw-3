@@ -54,7 +54,7 @@ if __name__ == "__main__":
         # filepath = data_dir / f"../data/{i}.in"
         a, b, values = process_file(filepath)
         (max_val, subsequence) = solve_max_subsequence(a, b, values)
-        output_path = data_dir / f"{i}.out"
+        # output_path = data_dir / f"{i}.out"
 
         print(f"Max value: {max_val}\n")
         print(f"Subsequence: {subsequence}\n")
