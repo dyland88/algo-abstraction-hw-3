@@ -5,6 +5,9 @@ Rohit Dasgupta - 23459981
 ## Instructions to run the program, including example commands
 * run `py main.py` and input filename located inside data folder
 
+## Assumptions
+* The input file is in the correct format detailed in the specification
+
 # Q1 Table
 
 ![Image](image.png)
